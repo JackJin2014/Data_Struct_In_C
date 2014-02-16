@@ -1,0 +1,17 @@
+OBJECT	=d_list.o d_list_test.o
+CC		=gcc
+CFLAGS	= -g -c -I. -I..
+
+all:d_list
+
+d_list:$(OBJECT)
+	$(CC) $(OBJECT) -o $@
+d_list.o:d_list.c
+	$(CC) $(CFLAGS) $< -o $@
+d_list_test.o:d_list_test.c
+	$(CC) $(CFLAGS) $< -o $@
+
+clean:
+	rm *.o
+disclean:clean
+	rm d_list

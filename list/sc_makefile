@@ -1,0 +1,17 @@
+OBJECT	=sc_list.o sc_list_test.o
+CC		=gcc
+CFLAGS	= -g -c -I. -I..
+
+all:sc_list
+
+sc_list:$(OBJECT)
+	$(CC) $(OBJECT) -o $@
+sc_list.o:sc_list.c
+	$(CC) $(CFLAGS) $< -o $@
+sc_list_test.o:sc_list_test.c
+	$(CC) $(CFLAGS) $< -o $@
+
+clean:
+	rm *.o
+disclean:clean
+	rm sc_list.exe*
