@@ -1,6 +1,9 @@
 /**
  * @file stack.h
- * @brief 使用一维数组实现堆栈
+ * @brief 堆栈接口
+ *  一维数组实现stack_array.c 
+ *  使用动态内存分配实现stack_mem.c
+ *  链表实现stack_list.c
  * @author Jack Jin - gjinjian@gmail.com
  * @version v0.1
  * @date 2014-01-22
@@ -14,6 +17,7 @@
 
 #define MAX_SIZE    100
 
+extern void init(size_t);
 extern int  push(Ele);
 extern Ele  pop(void);
 extern Ele  top(void);
