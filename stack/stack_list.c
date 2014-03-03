@@ -25,6 +25,15 @@ typedef struct list{
 static PList pl;
 static size_t counter;
 
+
+
+/**
+ * @brief 
+ *  创建新节点
+ * @param Ele
+ * @param next
+ * @return pn新节点的指针
+ */
 PNode NEW(Ele ele, PNode next)
 {
     PNode pn = (PNode)malloc(sizeof(Node));
@@ -37,6 +46,11 @@ PNode NEW(Ele ele, PNode next)
 }
 
 
+/**
+ * @brief 
+ *  初始化stack 
+ * @param max 没有用，为了与其他实现保持接口的一致
+ */
 void init(size_t max)
 {
     pl = (PList)malloc(sizeof(List));
@@ -47,12 +61,24 @@ void init(size_t max)
     counter = 0;
 }
 
+/**
+ * @brief 
+ *  压栈,counter+1
+ * @param Ele
+ *  压入的元素
+ * @return 成功1，失败0
+ */
 int  push(Ele ele)
 {
      pl->head.next = NEW(ele, pl->head.next);
      ++counter;
 }
 
+/**
+ * @brief 
+ *  弹栈counter-1
+ * @return 栈顶元素
+ */
 Ele  pop(void)
 {
     if(is_empty())  exit(1);
@@ -77,11 +103,21 @@ Ele  top(void)
     return pop();
 }
 
+/**
+ * @brief 
+ *  判断是否满,默认情况永远为false
+ * @return false
+ */
 bool is_full(void)
 {
     return false;
 }
 
+/**
+ * @brief 
+ *  判断是否空
+ * @return 空为真
+ */
 bool is_empty(void)
 {
     if(pl->head.next == NULL)
@@ -91,6 +127,11 @@ bool is_empty(void)
 }
 
 
+/**
+ * @brief 
+ *  堆栈的大小
+ * @return 堆栈的大小
+ */
 size_t size(void)
 {
     return counter;
