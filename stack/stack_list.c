@@ -34,7 +34,7 @@ static size_t counter;
  * @param next
  * @return pn新节点的指针
  */
-PNode NEW(Ele ele, PNode next)
+static PNode NEW(Ele ele, PNode next)
 {
     PNode pn = (PNode)malloc(sizeof(Node));
     if(pn == NULL)  return NULL;
