@@ -13,8 +13,17 @@
 #include <math.h>
 
 static  Ele     queue[MAX_SIZE];
-static  size_t  head=0;   //取元素的索引,范围0-[MAX_SIZE-1]
-static  size_t  tail=0;   //存元素的索引,范围0-[MAX_SIZE-1]
+static  size_t  head;   //取元素的索引,范围0-[MAX_SIZE-1]
+static  size_t  tail;   //存元素的索引,范围0-[MAX_SIZE-1]
+
+
+
+void init(size_t max)
+{
+    head = 0;
+    tail = 0;
+
+}
 
 /**
  * @brief 

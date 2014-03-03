@@ -13,6 +13,11 @@
 static Ele  queue[MAX_SIZE];
 static int  counter;
 
+void init(size_t max)
+{
+    counter = 0;
+}
+
 
 /**
  * @brief 

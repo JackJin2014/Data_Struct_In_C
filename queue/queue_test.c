@@ -11,6 +11,8 @@
 
 int main(void)
 {
+    init(12);
+
     int i = 0;
     for(i; i < 20; i++){
         enqueue(i);
