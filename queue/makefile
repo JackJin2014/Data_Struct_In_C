@@ -1,15 +1,17 @@
 OBJECT	=queue.o queue_test.o
 CC		=gcc
 CFLAGS	= -g -c -I. -I..
+STD = -std=c99
+TARGET = queue_test
+OUT = queue
 
-all:queue
+DEPS = queue.h
 
-queue:$(OBJECT)
-	$(CC) $(OBJECT) -o $@
-queue.o:queue.c
-	$(CC) $(CFLAGS) $< -o $@
-queue_test.o:queue_test.c
-	$(CC) $(CFLAGS) $< -o $@
+all : $(TARGET)
+$(TARGET): $(OBJECT)
+	$(CC) $(STD) $(OBJECT) -o $(OUT) 
+
+$(OBJECT): $(DEPS)
 
 clean:
 	rm *.o
