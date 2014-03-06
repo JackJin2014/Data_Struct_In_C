@@ -12,6 +12,15 @@
 #include <stdlib.h>
 #include <assert.h>
 
+
+/**
+ * @brief 
+ *  创建一个新节点
+ * @param Ele
+ * @param next
+ *
+ * @return 返回该新节点
+ */
 static PNode new(Ele ele, PNode next)
 {
     PNode pn = (PNode)malloc(sizeof(Node));
@@ -22,6 +31,13 @@ static PNode new(Ele ele, PNode next)
 }
 
 
+/**
+ * @brief 
+ *  创建一个队列，分配空间
+ * @param max
+ *
+ * @return 返回该队列的指针
+ */
 PQueue  init(int max)
 {
     PQueue pq = (PQueue)malloc(sizeof(Queue));
@@ -58,6 +74,13 @@ int  enqueue(PQueue pq, Ele ele)
 }
 
 
+/**
+ * @brief 
+ *  从oq队列中出队一个元素
+ * @param PQueue
+ *
+ * @return 返回头元素
+ */
 Ele  dequeue(PQueue pq)
 {
     if(is_empty(pq)) exit(1);
@@ -73,6 +96,13 @@ Ele  dequeue(PQueue pq)
 }
 
 
+/**
+ * @brief 
+ *  复制pq队列的首元素
+ * @param PQueue
+ *
+ * @return 首元素的拷贝
+ */
 Ele  cpqueue(PQueue pq)
 {    
     if(is_empty(pq)) exit(1);
@@ -81,6 +111,13 @@ Ele  cpqueue(PQueue pq)
 
 
 
+/**
+ * @brief 
+ *  pq是否是空队列
+ * @param PQueue
+ *
+ * @return 是否？
+ */
 bool is_empty(PQueue pq)
 {
     if(pq->head == NULL)
@@ -90,12 +127,26 @@ bool is_empty(PQueue pq)
 }
 
 
+/**
+ * @brief 
+ *  链表实现，假定不可能满
+ * @param PQueue
+ *
+ * @return false，不可能满
+ */
 bool is_full(PQueue pq)
 {
     return false;
 }
 
 
+/**
+ * @brief 
+ *  pq队列的大小
+ * @param PQueue
+ *
+ * @return 队列大小
+ */
 size_t   size(PQueue pq)
 {
     return pq->counter;
